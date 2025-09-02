@@ -248,68 +248,84 @@
 ////////////////////////////////////
 // Coding Challenge #2 - Student Grade Manager
 
-const grades = [78, 85, 92, 67, 88, 95, 73, 82];
+// const grades = [78, 85, 92, 67, 88, 95, 73, 82];
 
-// Function to calculate average
-function calculateAverage(grades) {
-    return grades.reduce((sum, grade) => sum + grade, 0) / grades.length;
-  // Your code here
-  // Hint: Sum all grades, divide by length
-}
+// // Function to calculate average
+// function calculateAverage(grades) {
+//     return grades.reduce((sum, grade) => sum + grade, 0) / grades.length;
+//   // Your code here
+//   // Hint: Sum all grades, divide by length
+// }
 
-// Function to find highest grade
-function findHighestGrade(grades) {
-    let highest = grades[0];
-    for (let i = 1; i < grades.length; i++) {
-        if (grades[i] > highest) {
-            highest = grades[i];
-        }
-    }
-    return highest;
-  // Your code here
-  // Hint: Start with first grade, compare with each subsequent grade
-}
+// // Function to find highest grade
+// function findHighestGrade(grades) {
+//     let highest = grades[0];
+//     for (let i = 1; i < grades.length; i++) {
+//         if (grades[i] > highest) {
+//             highest = grades[i];
+//         }
+//     }
+//     return highest;
+//   // Your code here
+//   // Hint: Start with first grade, compare with each subsequent grade
+// }
 
-// Function to find lowest grade
-function findLowestGrade(grades) {
-    let lowest = grades[0];
-    for (let i = 1; i < grades.length; i++) {
-        if (grades[i] < lowest) {
-            lowest = grades[i];
-        }
-    }
-    return lowest;
-  // Your code here
-  // Hint: Similar to highest, but use < comparison
-}
+// // Function to find lowest grade
+// function findLowestGrade(grades) {
+//     let lowest = grades[0];
+//     for (let i = 1; i < grades.length; i++) {
+//         if (grades[i] < lowest) {
+//             lowest = grades[i];
+//         }
+//     }
+//     return lowest;
+//   // Your code here
+//   // Hint: Similar to highest, but use < comparison
+// }
 
-// Function to count passing students
-function countPassing(grades, passingGrade) {
-    let count = 0;
-    for (let i = 0; i < grades.length; i++) {
-        if (grades[i] >= passingGrade) {
-            count++;
-        }
-    }
-    return count;
-  // Your code here
-  // Hint: Counter pattern - increment when condition is met
-}
+// // Function to count passing students
+// function countPassing(grades, passingGrade) {
+//     let count = 0;
+//     for (let i = 0; i < grades.length; i++) {
+//         if (grades[i] >= passingGrade) {
+//             count++;
+//         }
+//     }
+//     return count;
+//   // Your code here
+//   // Hint: Counter pattern - increment when condition is met
+// }
 
-// Generate complete report
-const average = calculateAverage(grades);
-const highest = findHighestGrade(grades);
-const lowest = findLowestGrade(grades);
-const passing = countPassing(grades, 70);
+// // Generate complete report
+// const average = calculateAverage(grades);
+// const highest = findHighestGrade(grades);
+// const lowest = findLowestGrade(grades);
+// const passing = countPassing(grades, 70);
 
-console.log("=== GRADE REPORT ===");
-console.log(`Average: ${average.toFixed(2)}`);
-console.log(`Highest: ${highest}`);
-console.log(`Lowest: ${lowest}`);
-console.log(`Passing students: ${passing} out of ${grades.length}`);
+// console.log("=== GRADE REPORT ===");
+// console.log(`Average: ${average.toFixed(2)}`);
+// console.log(`Highest: ${highest}`);
+// console.log(`Lowest: ${lowest}`);
+// console.log(`Passing students: ${passing} out of ${grades.length}`);
 
 
+const jonasArray = [
+  "Jonas",
+  "Schmedtmann",
+  2037 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+];
 
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  age: 2037 - 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+};
+
+ console.log(jonas);
 
 
 
