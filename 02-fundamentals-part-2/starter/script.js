@@ -309,28 +309,295 @@
 // console.log(`Passing students: ${passing} out of ${grades.length}`);
 
 
-const jonasArray = [
-  "Jonas",
-  "Schmedtmann",
-  2037 - 1991,
-  "teacher",
-  ["Michael", "Peter", "Steven"],
-];
+// const jonasArray = [
+//   "Jonas",
+//   "Schmedtmann",
+//   2037 - 1991,
+//   "teacher",
+//   ["Michael", "Peter", "Steven"],
+// ];
 
-const jonas = {
-  firstName: "Jonas",
-  lastName: "Schmedtmann",
-  age: 2037 - 1991,
-  job: "teacher",
-  friends: ["Michael", "Peter", "Steven"],
-};
+// const jonas = {
+//   firstName: "Jonas",
+//   lastName: "Schmedtmann",
+//   age: 2037 - 1991,
+//   job: "teacher",
+//   friends: ["Michael", "Peter", "Steven"],
+// };
 
- console.log(jonas);
+//  console.log(jonas);
+
+//  //Property Access Methods
+//   console.log(jonas.lastName);
+//   console.log(jonas['lastName']);
+//   const nameKey = 'Name';
+//   console.log(jonas['first' + nameKey]);
+
+//   //modify property
+//   jonas.age = 30;
+//   jonas['job'] = 'programmer';
+//   console.log(jonas);
+
+//   jonas.location = 'Portugal';
+//   jonas['twitter'] = '@jonasschmedtman';
+
+//   jonas['linkedin'] = 'linkedin.com/in/jonasschmedtmann';
+//   jonas.hasDriversLicense = true;
+//   console.log(jonas);
+
+//   const person = {
+//   name: "Jonas",
+//   age: 46,
+//   occupation: "teacher",
+// };
+
+// const car = {
+//   brand: "Toyota",
+//   model: "Camry",
+//   year: 2020,
+//   color: "blue",
+// };
+
+// const student = {
+//   firstName: "Alice",
+//   grades: [85, 92, 78, 96, 88],
+//   address: {
+//     street: "123 Main St",
+//     city: "New York",
+//   }
+// };
+
+// console.log(student.grades[0]);
+// console.log(student.address.city);
+
+// const jonas1 = {
+//   firstName: "Jonas",
+//   lastName: "Schmedtmann",
+//   birthYear: 1991,
+//   job: "teacher",
+//   friends: ["Michael", "Peter", "Steven"],
+//   hasDriversLicense: true,
+
+//   // Method - function inside object
+//   calcAge: function (birthYear) {
+//     return 2025 - birthYear;
+//   },
+// }; 
+
+// console.log(jonas1.calcAge(1991));
+
+// const jonasImproved = {
+//   firstName: "Jonas",
+//   lastName: "Schmedtmann",
+//   birthYear: 1991,
+//   job: "teacher",
+//   friends: ["Michael", "Peter", "Steven"],
+//   hasDriversLicense: true,
+
+//   calcAge: function () {
+//     console.log(this); // Shows the jonas object
+//     return 2025 - this.birthYear; // Access own birthYear!
+//   },
+// };
+// console.log(jonasImproved.calcAge());
+
+// const jonasAdvanced = {
+//   firstName: "Jonas",
+//   lastName: "Schmedtmann",
+//   birthYear: 1991,
+//   job: "teacher",
+//   friends: ["Michael", "Peter", "Steven"],
+//   hasDriversLicense: true,
+
+//   calcAge: function () {
+//     this.age = 2037 - this.birthYear; // Store result as new property
+//     return this.age;
+//   },
+
+//   getSummary: function () {
+//     return `${this.firstName} is a ${this.calcAge()}-year old ${
+//       this.job
+//     }, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+//   },
+// }; 
+// console.log(jonasAdvanced.calcAge());
+// console.log(jonasAdvanced.age); // New property from calcAge  
+// console.log(jonasAdvanced.getSummary());
+
+////////////////////////////////////
+// Coding Challenge #3 - User Profile System
+
+// const user = {
+//   firstName: "Sarah",
+//   lastName: "Johnson",
+//   birthYear: 1995,
+//   location: "New York",
+//   interests: ["photography", "travel", "coding"],
+//   friends: [
+//     { name: "Michael", status: "active" },
+//     { name: "Emma", status: "inactive" },
+//     { name: "David", status: "active" },
+//   ],
+//   isActive: true,
+
+//   // Calculate age method
+//   calcAge: function () {
+//     // Calculate age and store as this.age
+//     // Hint: Use new Date().getFullYear() for current year
+//     // Your code here
+//     this.age = new Date().getFullYear() - this.birthYear;
+//     return this.age;
+//   },
+
+//   // Add friend method
+//   addFriend: function (name, status = "active") {
+//     // Add new friend object to this.friends array
+//     // Return the new length of friends array
+//     // Your code here
+//     this.friends.push({ name: name, status: status });
+//     return this.friends.length;
+//   },
+
+//   // Get active friends count
+//   getActiveFriends: function () {
+//     // Filter friends array to count only active friends
+//     // Hint: use this.friends.filter()
+//     // Your code here
+//     const activeFriends = this.friends.filter(friend => friend.status === "active");
+//     return activeFriends.length;
+//   },
+
+//   // Toggle active status
+//   toggleStatus: function () {
+//     // Switch this.isActive between true and false
+//     // Return the new status
+//     // Your code here
+//     this.isActive = !this.isActive;
+//     return this.isActive;
+//   },
+
+//   // Generate profile summary
+//   getSummary: function () {
+//     // Create a social media style profile summary
+//     // Include: name, age, location, status, friend counts, interests
+//     // Use template literals for nice formatting
+//     // Your code here
+//     const age = this.calcAge();
+//     const activeFriendsCount = this.getActiveFriends();
+//     const status = this.isActive ? "Active" : "Inactive";
+ 
+//     return `${this.firstName} ${this.lastName}, Age: ${age}, Location: ${this.location}
+//      Currently ${status} 
+//     ${this.friends.length} total, ${activeFriendsCount} active
+//      Interests: ${this.interests.join(", ")}
+//      Connect with friends and share your adventures!`;
+    
+
+//   },
+// };
+
+// // Test your user profile system
+// console.log(user.getSummary());
+// user.addFriend("Alex", "active");
+
+// user.toggleStatus();
+// console.log(`\nAfter updates:`);
+// console.log(user.getSummary());
 
 
+//query selector that uses css selectors
+
+// const message = document.querySelector('.message');
+// console.log(message);
+
+// const button = document.querySelector('.btn');
+// console.log(button);
+
+// const heading = document.querySelector('h1');
+// console.log(heading);
+
+// console.log(message.textContent);
+// console.log(button.id);
+// console.log(heading.tagName);
+// console.log(heading.textContent);
+
+// //getElementById
+// const buttonByID = document.getElementById('btn');
+// console.log(buttonByID);
+// console.log(buttonByID === button);
+
+// //querySelectorAll
+// const allParagraphs = document.querySelectorAll('p');
+// console.log(allParagraphs);
+// console.log(allParagraphs[0]);
+
+// const message = document.querySelector('.message');
+// // text content
+// console.log(message.textContent);
+// message .textContent = 'Correct Number! 🎉' 
+// console.log(message.textContent);
+
+// //innerHTML
+
+// message.innerHTML = '<strong>Correct Number! 🎉</strong>';
+// //innerText
+// console.log(message.innerText);
 
 
+// //Input Element Values
+// const input = document.querySelector('.guess');
+
+// console.log(input.value);
+// input.value = 'Default Text';
+// console.log(input.value);
+
+// const heading = document.querySelector('h1');
+
+// heading.style.color = 'red';
+// heading.style.backgroundColor = 'blue';
+// heading.style.fontSize = '5rem';
+
+// const button = document.querySelector('#btn');
+// button.style.padding = '20px';
+// button.style.borderRadius = '5px';
+// button.style.backgroundColor = 'green';
+// button.style.color = 'white';
+
+//eventlistners = user interactions
+const message = document.querySelector('.message');
+
+const button = document.querySelector('#btn');
+button.computedStyleMap.padding = '20px';
+button.style.borderRadius = '5px';
 
 
+button.addEventListener('click', function(){
+  console.log('Button was clicked');
+  message.textContent = "Button was clicked";
+  message.style.color = 'blue';
+});
 
+let clickCount = 0;
+button.addEventListener('click', function(){
+  clickCount++;
+  button.textContent = `Button clicked ${clickCount} times`;
+  button.style.backgroundColor = `hsl(${clickCount * 30}, 100%, 50%)`;
+});
+const input = document.querySelector('.guess');
+const display = document.querySelector('.message');
+input.addEventListener('input', function(){
+  const userInput = input.value;
+  display.textContent = `User typed: ${userInput}`;
+  display.style.fontSize = `${userInput.length + 10}px`;
+});
 
+//keyboard events = responds to specific key
+
+input.addEventListener('keydown', function(event){
+console.log(`Key pressed "${event.key} `);
+
+if(event.key ==='Enter' ){
+  display.textContent = `You pressed Enter! Text was ${input.value}`;
+  input.value = "";
+}
+});
