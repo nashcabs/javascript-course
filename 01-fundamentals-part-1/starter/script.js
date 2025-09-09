@@ -330,19 +330,43 @@
 //   );
 // // console.log("Age 16, permission false, experience true:", (16 >= 18
 
-const age = 17;
+// const age = 17;
 
-const drink = age >=18 ? 'wine' : 'water';
-console.log(drink);
+// const drink = age >=18 ? 'wine' : 'water';
+// console.log(drink);
 
-let drink2 
-if (age >= 18) {
-  drink2 = 'wine';
-}else {
-  drink2 = 'water';
-}
+// let drink2 
+// if (age >= 18) {
+//   drink2 = 'wine';
+// }else {
+//   drink2 = 'water';
+// }
 
-console.log(drink2);
+// console.log(drink2);
+
+
+// console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'}`);
+
+
+////////////////////////////////////
+// Coding Challenge #4
+
+// const bill = 275; // Test with 275, 40, and 430
+
+// // Step 1: Create the tip calculation using ternary operator
+// // Rule: 15% if between 50-300, otherwise 20%
+// // Hint: bill >= 50 && bill <= 300
+
+// const tip = bill <=300 && bill >= 50 ? bill * 0.15 : bill * 0.2;// Your ternary operator here
+
+// // Step 2: Create beautiful output with template literal
+// console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
+
+// // Expected outputs:
+// // Bill 275: "The bill was 275, the tip was 41.25, and the total value 316.25"
+// // Bill 40:  "The bill was 40, the tip was 8, and the total value 48"
+// // Bill 430: "The bill was 430, the tip was 86, and the total value 516"
+
 
 
 
