@@ -39,6 +39,19 @@ document.querySelector('.check').addEventListener('click', function () {
   // Get the user input value
   const guess = Number(document.querySelector('.guess').value);
   console.log('User Guess:', guess);
+
+  if (!guess) {
+    console.log('No Number!');
+    document.querySelector('.message').textContent = 'No Number!';
+    return;
+  }
+
+  if (guess < 1 || guess > 20) {
+    console.log('Invalid Number!');
+    document.querySelector('.message').textContent =
+      'Number must be between 1 and 20!';
+    return;
+  }
   //function of the game
   if (guess === secretNumber) {
     console.log('User Guessed Correctly!');
@@ -49,6 +62,7 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.highscore').textContent = highscore;
     }
     document.querySelector('.message').textContent = 'You Win!';
+    document.body.style.backgroundColor = '#60b347';
     document.querySelector('.guess').disabled = true;
     document.querySelector('.check').disabled = true;
   } else if (guess > secretNumber) {
@@ -62,6 +76,8 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.number').textContent = secretNumber;
       document.querySelector('.guess').disabled = true;
       document.querySelector('.check').disabled = true;
+      document.querySelector('body').style.backgroundColor = '#ff0000';
+      document.querySelector('.message').textContent = 'Game Over!';
     }
   } else if (guess < secretNumber) {
     console.log('Too Low!');
@@ -74,6 +90,8 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.number').textContent = secretNumber;
       document.querySelector('.guess').disabled = true;
       document.querySelector('.check').disabled = true;
+      document.querySelector('body').style.backgroundColor = '#ff0000';
+      document.querySelector('.message').textContent = 'Game Over!';
     }
   }
 });
@@ -88,5 +106,7 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('.guess').value = '';
   document.querySelector('.guess').disabled = false;
   document.querySelector('.check').disabled = false;
+  document.querySelector('body').style.backgroundColor = '';
+
   console.log('Game Reset! New Secret Number:', secretNumber);
 });
