@@ -43,18 +43,34 @@
 // }
 
 // a();
-console.log(varX); // 1
-// console.log(letX); // 2
-// console.log(constX);//3
+// console.log(varX); // 1
+// // console.log(letX); // 2
+// // console.log(constX);//3
 
-var varX = 1;
-let letX = 2;
-const constX = 3;
+// var varX = 1;
+// let letX = 2;
+// const constX = 3;
 
-console.log(addDecl(2, 3)); // 5
+// console.log(addDecl(2, 3)); // 5
 
-function addDecl(a, b) {
-  return a + b;
-}
+// function addDecl(a, b) {
+//   return a + b;
+// }
 
-const addArrow = (a, b) => a + b;
+// const addArrow = (a, b) => a + b;
+
+const person = {
+  name: 'Jonas',
+  greet: function () {
+    console.log(`Hello, I am ${this.name}`);
+  },
+};
+
+person.greet();
+
+const anotherPerson = {
+  name: 'Sarah',
+};
+
+anotherPerson.greet = person.greet;
+anotherPerson.greet();
