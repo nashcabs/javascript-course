@@ -206,5 +206,93 @@ class App {
         message += 'An unknown error occurred.';
         break;
     }
+     alert(`📍 ${message}`);
+    this._loadDefaultMap();
+  }
 
+  _loadMap(position) {
+    const { latitude, longitude } = position.coords;
+    console.log(`Loading map at coordinates: ${latitude}, ${longitude}`);
+
+    // create coords array
+    // VERYY IMPORTANT!!
+    const coords = [latitude, longitude];
+
+    // initialize the map and and center at user's location
+    this.#map = L.map('map').setView(coords, this.#mapZoomLevel);
+
+    // add the tile layer to the map (the actual map image)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(this.#map);
+
+    //add a marker to the map at user's location
+    L.marker(coords).addTo(this.#map).bindPopup('Your Location').openPopup();
+
+    //DIto
+    this.#map.on('click', this._showForm.bind(this));
+
+    this._renderStoredWorkouts();
+
+    console.log('Map loaded successfully at user location');
+  }
+
+  _loadDefaultMap() {
+    console.log('Loading default map location around Manila');
+
+    const defaultCoords = [14.604, 120.994];
+
+    this.#map = L.map('map').setView(defaultCoords, this.#mapZoomLevel);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(this.#map);
+
+    this.#map.on('click', this._showForm.bind(this));
+
+    this._renderStoredWorkouts();
+
+    console.log('Default map loaded successfully');
+  }
+
+  _renderStoredWorkouts() {
+    this.#workouts.forEach(workout => {
+      this._renderWorkoutMarker(workout);
+      this._renderWorkout(workout);
+    });
+
+    if (this.#workouts.length > 0) {
+      console.log(`Rendered ${this.#workouts.length} stored workouts`);
+    }
+  }
+
+  _showForm(mapE) {
+    this.#mapEvent = mapE;
+    form.classList.remove('hidden');
+    inputDistance.focus();
+  }
+
+  _toggleElevationField() {
+    //turn on or display the elevation
+    inputElevation.closest('.form__row').classList.toggle('form__row--hidden');
+    //turns off ot hide the cadence
+    inputCadence.closest('.form__row').classList.toggle('form__row--hidden');
+  }
+
+  _hideForm() {
+    //empty the input fields
+    inputDistance.value =
+      inputDuration.value =
+      inputCadence.value =
+      inputElevation.value =
+        '';
+
+    //add hiding animation
+    form.style.display = 'none';
+    form.classList.add('hidden');
+    setTimeout(() => (form.style.display = 'grid'), 1000);
+  }
+}
     
